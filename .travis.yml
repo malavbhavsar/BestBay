@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+  - 1.9.3
+env:
+  - DB=sqlite
+  - DB=postgresql
+script:
+  - RAILS_ENV=test bundle exec rake --trace db:create
+  - RAILS_ENV=test bundle exec rake --trace db:migrate
+  - RAILS_ENV=test bundle exec rake --trace travis
+before_script:
+  - psql -c 'create database BestBay_test' -U postgres

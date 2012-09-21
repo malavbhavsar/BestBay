@@ -1,18 +1,32 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.7'
+gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-   gem 'sqlite3'
+  gem 'sqlite3'
+  gem 'debugger'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'rspec-rails'
+  gem 'ZenTest'
+  gem 'simplecov'
+  gem 'cucumber'
+  gem 'cucumber-rails'
+  gem 'cucumber-rails-training-wheels'
+  gem 'pg'
 end
 
 group :production do
   gem 'pg'
 end
-
 
 
 # Gems used only for assets and not required
@@ -22,7 +36,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -43,11 +57,3 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-
-#suggested gems by Todd
-gem 'factory_girl_rails' 
-gem 'rspec-rails' 
-gem 'devise' 
-gem 'ruby-debug19' 
-gem 'ruby-debug-base19x' 
-gem 'ruby-debug-ide' #'0.4.6' 
