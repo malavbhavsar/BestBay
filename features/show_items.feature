@@ -12,5 +12,5 @@ Feature: Show item
   Scenario: Items is anything
     Given I am on the items page
     Then I should see the following items:
-      |snow white|https://ssl.gstatic.com/movies/tbn_a7d75269b295f037.jpg?size=80x107&web                           |it about snow whit|10.0        |20.0         |Show|Edit|Destroy|
-      |dredd     |http://ia.media-imdb.com/images/M/MV5BODkyNDQzMzUzOF5BMl5BanBnXkFtZTcwODYyMDEyOA@@._V1._SY317_.jpg|it about dredd    |15.0        |30.0         |Show|Edit|Destroy|
+      |snow white|<img src='https://ssl.gstatic.com/movies/tbn_a7d75269b295f037.jpg?size=80x107&web'>                           |it about snow whit|10.0        |20.0         |Show|Edit|Destroy|
+      |dredd     |<img src='http://ia.media-imdb.com/images/M/MV5BODkyNDQzMzUzOF5BMl5BanBnXkFtZTcwODYyMDEyOA@@._V1._SY317_.jpg'>|it about dredd    |15.0        |30.0         |Show|Edit|Destroy|
