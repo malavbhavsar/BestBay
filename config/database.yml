@@ -17,9 +17,12 @@ defaults: &defaults
 development:
   <<: *defaults
 
-test:
+test: &test
   <<: *defaults
 
 production:
   <<: *defaults
   # TODO: Add erb-echo of credentials
+
+cucumber:
+  <<: *test
