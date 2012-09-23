@@ -11,7 +11,11 @@ Then /^I should see the following items:$/ do |expected_table|
   page.all("table#items tbody#itemsbody tr").each do |tr_node|
     td_part =[]
     tr_node.all("td").each do |td_node|
-      td_part << td_node.text
+      if td_node.native.to_s.include?("img src")
+        td_part << td_node.all("img")[0]['src']
+      else
+        td_part << td_node.text
+      end
     end
     actual_table << td_part
   end
