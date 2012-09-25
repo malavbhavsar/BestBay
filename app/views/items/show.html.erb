@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-
+Name <%=@item.name%>
+<br>
+Description <%=@item.description%>
+<br>
+Opening bid <%=@item.opening_bid%>
+<br>
+Highest bid <%=@item.highest_bid%>
+<br>
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

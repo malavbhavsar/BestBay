@@ -1,7 +1,6 @@
 Given /the following items exist/ do |items_table|
   items_table.hashes.each do |item|
     # each returned element will be a hash whose key is the table header.
-    # you should arrange to add that movie to the database here.
     Item.create!(item)
   end
 end
@@ -21,3 +20,17 @@ Then /^I should see the following items:$/ do |expected_table|
   end
   expected_table.transpose.diff!(actual_table.transpose)
 end
+
+And /^I follow "([^"]*)" for "([^"]*)"$/ do |link,item|
+  page.all("table#items tbody#itemsbody tr").each do |tr_node|
+    print tr_node.native
+    if tr_node.all("td")[1].text == item
+      within(tr_node) do
+        click_link link_name
+      end
+    end
+  end
+end
+
+
+
