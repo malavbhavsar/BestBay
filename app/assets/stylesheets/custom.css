@@ -1,0 +1,25 @@
+.span3 li {
+    font-size: 12px;
+}
+.product_area {
+    background-color: rgb(238,238,238);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 20px;
+}
+.button_area {
+
+}
+.product_details {
+    background-color: #FFF;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 20px
+}
+.span6 img {
+    width: 200px;
+    height: 200px;
+}

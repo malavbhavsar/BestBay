@@ -1,12 +1,58 @@
 <p id="notice"><%= notice %></p>
+<% link_to 'Edit', edit_item_path(@item) %>
+<% link_to 'Back', items_path %>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <!--<li class="nav-header">Sidebar</li>-->
+          <li><%= link_to image_tag('thumb.jpeg', :alt =>@item.name) %></li>
+          <li>Name: Harshad Mande</li>
+          <li>Addr: Pitt, PA</li>
+          <li>Tel.: 412-378-5298 </li>
+        </ul>
+      </div><!--/.well -->
+    </div><!--/span-->
+    <div class = "span9">
+      <form class="form-search">
+        <input type="text" class="input-xlarge search-query">
+        <button type="submit" class="btn">Search</button>
+      </form>
+    </div>
+    <div class="span9 product_area">
+      <div class="span4"><%= link_to image_tag(@item.picture, :alt =>@item.name)%></div>
+      <div class="span7 product_details">
+        Name: <%=@item.name%>
+        <br>
+        Description: <%=@item.description%>
+        <br>
+        Opening bid: <%=@item.opening_bid%>
+        <br>
+        Highest bid: <%=@item.highest_bid%>
+        <br>
+      </div>
+      <div class="span11 product_area">
+        <div class="span4">
+          <a class="btn btn-primary btn-block btn-large">Place a Bid &raquo;</a>
+        </div>
+        <div class="span4">
+          <a class="btn btn-primary btn-block btn-large">Buy Right Now &raquo;</a>
+        </div>
+        <div class="span4">
+          <a class="btn btn-primary btn-block btn-large">Rent &raquo;</a>
+        </div>
+      </div>
+    </div>
+  </div><!--/row-->
+  <div class="row-fluid">
+  </div>
+  <hr>
 
-Name <%=@item.name%>
-<br>
-Description <%=@item.description%>
-<br>
-Opening bid <%=@item.opening_bid%>
-<br>
-Highest bid <%=@item.highest_bid%>
-<br>
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+  <footer>
+    <p>&copy; BestBay 2012</p>
+  </footer>
+
+</div><!--/.fluid-container-->
+
+
