@@ -7,29 +7,31 @@
       <div class="well sidebar-nav">
         <ul class="nav nav-list">
           <!--<li class="nav-header">Sidebar</li>-->
-          <li><%= link_to image_tag('thumb.jpeg', :alt =>@item.name) %></li>
+          <li><%= link_to image_tag('thumb.jpeg', :alt => @item.name) %></li>
           <li>Name: Harshad Mande</li>
           <li>Addr: Pitt, PA</li>
-          <li>Tel.: 412-378-5298 </li>
+          <li>Tel.: 412-378-5298</li>
         </ul>
-      </div><!--/.well -->
-    </div><!--/span-->
-    <div class = "span9">
+      </div>
+      <!--/.well -->
+    </div>
+    <!--/span-->
+    <div class="span9">
       <form class="form-search">
         <input type="text" class="input-xlarge search-query">
         <button type="submit" class="btn">Search</button>
       </form>
     </div>
     <div class="span9 well">
-      <div class="span4"><%= link_to image_tag(@item.picture, :alt =>@item.name)%></div>
+      <div class="span4"><%= link_to image_tag(@item.picture, :alt => @item.name) %></div>
       <div class="span7 product_details">
-        Name: <%=@item.name%>
+        Name: <%= @item.name %>
         <br>
-        Description: <%=@item.description%>
+        Description: <%= @item.description %>
         <br>
-        Opening bid: <%=@item.opening_bid%>
+        Opening bid: <%= @item.opening_bid %>
         <br>
-        Highest bid: <%=@item.highest_bid%>
+        Highest bid: <%= @item.highest_bid %>
         <br>
       </div>
       <div class="span11 well">
@@ -44,15 +46,10 @@
         </div>
       </div>
     </div>
-  </div><!--/row-->
+  </div>
+  <!--/row-->
   <div class="row-fluid">
   </div>
-  <hr>
-
-  <footer>
-    <p>&copy; BestBay 2012</p>
-  </footer>
-
 </div><!--/.fluid-container-->
 
 
