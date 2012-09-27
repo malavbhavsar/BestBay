@@ -20,7 +20,7 @@
         <button type="submit" class="btn">Search</button>
       </form>
     </div>
-    <div class="span9 product_area">
+    <div class="span9 well">
       <div class="span4"><%= link_to image_tag(@item.picture, :alt =>@item.name)%></div>
       <div class="span7 product_details">
         Name: <%=@item.name%>
@@ -32,7 +32,7 @@
         Highest bid: <%=@item.highest_bid%>
         <br>
       </div>
-      <div class="span11 product_area">
+      <div class="span11 well">
         <div class="span4">
           <a class="btn btn-primary btn-block btn-large">Place a Bid &raquo;</a>
         </div>

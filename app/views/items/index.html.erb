@@ -1,27 +1,65 @@
 <h1>Listing items</h1>
 
-<table id='items'>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-<tbody id='itemsbody'>
-<% @items.each do |item| %>
-  <tr>
-    <td><%= item.name  %></td>
-    <td><img src='<%= item.picture %>'></td>
-    <td><%= item.description %></td>
-    <td><%= item.opening_bid %></td>
-    <td><%= item.highest_bid %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</tbody>
-</table>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="nav-header">Sidebar</li>
+          <li><%= link_to image_tag('thumb.jpeg') %></li>
+          <li>Name: Harshad Mande</li>
+          <li>Addr: Pitt, PA</li>
+          <li>Tel.: 412-378-5298 </li>
+        </ul>
+      </div><!--/.well -->
+    </div><!--/span-->
+    <div class = "span9">
+      <form class="form-search">
+        <input type="text" class="input-xlarge search-query">
+        <button type="submit" class="btn">Search</button>
+      </form>
+      <a class="btn btn-primary btn-block btn-small">All Fashion Categories &raquo;</a>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span3 well">
+    </div>
+    <div class="span9 well">
+      <table id='items' class="table">
+        <tr>
+          <th>Name</th>
+          <th>Picture</th>
+          <th>Description</th>
+          <th>Opening Bid</th>
+          <th>Highest Bid</th>
+          <th>View Details</th>
+        </tr>
+        <tbody id='itemsbody'>
+        <% @items.each do |item| %>
+            <tr>
+              <td><%= item.name  %></td>
+              <td><img src='<%= item.picture %>' height="200" width="200"></td>
+              <td><%= item.description %></td>
+              <td><%= item.opening_bid %></td>
+              <td><%= item.highest_bid %></td>
+              <td><%= link_to 'Show', item %></td>
+              <!--<td><%= link_to 'Edit', edit_item_path(item) %></td>-->
+              <!--<td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+    <!--<%= link_to 'New Item', new_item_path %>-->
+  </div>
+</div>
+</div>
+</div><!--/row-->
 
-<br />
+<hr>
 
-<%= link_to 'New Item', new_item_path %>
+<footer>
+  <p>&copy; Company 2012</p>
+</footer>
+
+</div><!--/.fluid-container-->
