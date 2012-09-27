@@ -31,3 +31,5 @@ Dependency Status [![Dependency Status](https://gemnasium.com/malavbhavsar/BestB
 ========
 Build Status [![Build Status](https://secure.travis-ci.org/malavbhavsar/BestBay.png)](http://travis-ci.org/malavbhavsar/BestBay)
 ========
+CodeClimate [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/malavbhavsar/BestBay)
+========
