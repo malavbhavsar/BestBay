@@ -10,6 +10,8 @@ BestBay
 
 Team project for 96-281: Introduction to Software Engineering. Essentially eBay+ made in rails.
 
+Website up on heroku: http://lit-island-8118.herokuapp.com/items
+
 Developer Team
 ==============
 
