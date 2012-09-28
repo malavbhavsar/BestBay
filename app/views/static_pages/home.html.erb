@@ -1,11 +1,8 @@
 <div class="center hero-unit">
   <h1>Welcome to BestBay</h1>
-
   <h2>
     Mini ebay, Much Fun!
   </h2>
-
-  <%= link_to "Login with google!", items,
-              class: "btn btn-large" %>
-  <%= link_to "Sign up", new_user_registration_path %>
+  <%= link_to "Login with Google", user_omniauth_authorize_path(:google_oauth2), class: "btn btn-large" %>
+  <%= link_to "I don't have Google account", new_user_session_path, class: "btn btn-large" %>
 </div>
