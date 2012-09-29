@@ -1,0 +1,11 @@
+development:
+  client_id: 723322219157.apps.googleusercontent.com
+  client_secret: Ht6c_So4eO1KmOdJ_SDwkpLk
+
+test:
+  client_id: 723322219157.apps.googleusercontent.com
+  client_secret: Ht6c_So4eO1KmOdJ_SDwkpLk
+
+production:
+  client_id: 723322219157-3cqfqdcnsq80d9u69hvvfgh710qubale.apps.googleusercontent.com
+  client_secret: aIs1pHwh4BNUm9vvtbDhYFSx

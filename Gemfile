@@ -47,6 +47,8 @@ gem 'devise'
 
 gem 'omniauth-google-oauth2'
 
+gem 'yettings'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

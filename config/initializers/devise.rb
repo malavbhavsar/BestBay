@@ -209,7 +209,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
-  config.omniauth :google_oauth2, "723322219157.apps.googleusercontent.com", "Ht6c_So4eO1KmOdJ_SDwkpLk", { access_type: "offline", approval_prompt: "force" }
+  config.omniauth :google_oauth2, Yetting.client_id, Yetting.client_secret, { access_type: "offline", approval_prompt: "force" }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
