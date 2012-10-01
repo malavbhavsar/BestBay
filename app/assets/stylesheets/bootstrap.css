@@ -4912,3 +4912,9 @@ button.close {
     overflow: visible !important;
   }
 }
+
+.carousel {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,8 +1,49 @@
+
 <div class="center hero-unit">
-  <h1>Welcome to BestBay</h1>
-  <h2>
-    Mini ebay, Much Fun!
-  </h2>
-  <%= link_to "Login with Google", user_omniauth_authorize_path(:google_oauth2), class: "btn btn-large" %>
-  <%= link_to "I don't have Google account", new_user_session_path, class: "btn btn-large" %>
+
+  <div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="item active">
+        <%= image_tag 'bootstrap-mdo-sfmoma-01.jpg'%>
+        <div class="carousel-caption">
+          <h4>First item</h4>
+          <p>This item is about sport.</p>
+        </div>
+      </div>
+      <div class="item">
+        <%= image_tag 'bootstrap-mdo-sfmoma-02.jpg' %>
+        <div class="carousel-caption">
+          <h4>Second item</h4>
+          <p>This item is about House.</p>
+        </div>
+      </div>
+      <div class="item">
+        <%= image_tag 'bootstrap-mdo-sfmoma-03.jpg' %>
+        <div class="carousel-caption">
+          <h4>Third item</h4>
+          <p>This item is about Motor.</p>
+        </div>
+      </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  </div>
+
+  <h3> Hot News & Items</h3>
+  <div class="row show-grid" style='text-align:center'>
+    <div class="span2"><%= image_tag 'car_1.jpg' %></div>
+    <div class="span2"><%= image_tag 'home.jpg' %></div>
+    <div class="span2"><%= image_tag 'sports_1.jpg' %></div>
+    <div class="span2"><%= image_tag 'electronic_1.jpg' %></div>
+    <div class="span2"><%= image_tag 'clothes_1.jpg' %></div>
+  </div>
+
+
+  <div class="row show-grid" style='text-align:center'>
+    <%= link_to "Login with google!", items_path,
+              class: "btn btn-large" %>
+  </div>
+  <div class="row show-grid" style='text-align:center'>
+    <%= link_to "Sign up", new_user_registration_path %>
+  </div>
 </div>

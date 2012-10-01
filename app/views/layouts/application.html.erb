@@ -14,6 +14,12 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div class="span10">
+    <form class="form-search" style="text-align: right;">
+      <input type="text" class="input-xlarge search-query">
+      <button type="submit" class="btn">Search</button>
+    </form>
+  </div>
 </head>
 <body>
 <%= render "shared/nav_bar" %>
@@ -24,6 +30,7 @@
   <footer>
     <p>&copy; BestBay 2012</p>
   </footer>
+  <%= render 'layouts/footer' %>
 </div>
 </body>
 </html>
