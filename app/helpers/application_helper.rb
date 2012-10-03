@@ -5,7 +5,7 @@ module ApplicationHelper
       when :info then "info"
       when :notice then "info"
       when :error then "error"
-      when :alert then "info"
+      when :alert then "error"
       else "block"
     end
   end

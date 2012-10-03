@@ -1,3 +1,4 @@
+<% devise_error_messages! %>
 <% [:success, :info, :notice, :error, :alert].each do |level| %>
     <% unless flash.nil? or flash[level].blank? %>
         <div class="alert alert-<%= flash_class(level) %>">
