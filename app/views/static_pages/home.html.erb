@@ -1,6 +1,4 @@
-
-<div class="center hero-unit">
-
+<div class="center">
   <div id="myCarousel" class="carousel slide">
     <div class="carousel-inner">
       <div class="item active">
@@ -28,7 +26,6 @@
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
     <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
   </div>
-
   <h3> Hot News & Items</h3>
   <div class="row show-grid" style='text-align:center'>
     <div class="span2"><%= image_tag 'car_1.jpg' %></div>
@@ -36,14 +33,5 @@
     <div class="span2"><%= image_tag 'sports_1.jpg' %></div>
     <div class="span2"><%= image_tag 'electronic_1.jpg' %></div>
     <div class="span2"><%= image_tag 'clothes_1.jpg' %></div>
-  </div>
-
-
-  <div class="row show-grid" style='text-align:center'>
-    <%= link_to "Login with google!", items_path,
-              class: "btn btn-large" %>
-  </div>
-  <div class="row show-grid" style='text-align:center'>
-    <%= link_to "Sign up", new_user_registration_path %>
   </div>
 </div>

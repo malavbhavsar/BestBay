@@ -1,8 +1,32 @@
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
-      <a class="brand" href="#">BestBay</a>
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="/">BestBay</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><a href="about">About</a></li>
+          <li><a href="contact">Contact</a></li>
+        </ul>
+        <ul class="nav pull-right">
+          <%if user_signed_in?%>
+            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+            <li class="dropdown" id="login_menu">
+              <a href="#" class="dropdown-toggle pull" data-toggle="dropdown">Sign in<b class="caret"></b></a>
+              <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+                <%= render "devise/shared/sign_in_dropdown" %>
+              </div>
+            </li>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "Preview", items_path %></li>
+          <% end %>
+        </ul>
+      </div><!--/.nav-collapse -->
     </div>
   </div>
 </div>

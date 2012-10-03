@@ -1,4 +1,4 @@
-class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class MyOmniauthCallbacksController < Devise::OmniauthCallbacksController
   # To change this template use File | Settings | File Templates.
   def google_oauth2
     # You need to implement the method below in your model (e.g. app/models/user.rb)

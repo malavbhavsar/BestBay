@@ -20,3 +20,7 @@ coverage/*
 doc/coverage/*
 *DS_Store
 .rspec
+
+#Also ignore the test folder, I am not using Test::Unit. We will use spec
+#and cucumber
+/test
