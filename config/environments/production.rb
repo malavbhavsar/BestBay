@@ -20,6 +20,21 @@ BestBay::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # while installing devise, it instructed to do following.
+  config.action_mailer.default_url_options = { :host => 'lit-island-8118.herokuapp.com' }
+
+  config.action_mailer.delivery_method = :smtp
+  # Before Ruby 1.8.7, needed an external gem to do TLS, but no longer...
+  config.action_mailer.smtp_settings = {
+      # enable_starttls_auto: true, # This is enabled by default, no need to set it explicitly.
+      address: "smtp.gmail.com",
+      port: "587",
+      authentication: :plain,
+      domain: "malavbhavsar.com",
+      user_name: "dumb.bestbay",
+      password: "dumb.bestbay",
+  }
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
