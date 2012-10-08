@@ -19,16 +19,17 @@
         <label class="control-label" for="item_name">Description: </label> <%= f.text_area :description, placeholder: "Enter a Brief Description",id:"description", rows:"5" %>
     </div>
       <div class="control-group">
-        <label class="control-label" for="item_name">Opening Bid: </label> <%= f.text_field :opening_bid, placeholder: "Enter Opening Bid" %>
+        <label class="control-label" for="item_name">Opening Bid: </label> <%= f.text_field :opening_bid, placeholder: "Enter the Opening" %>
     </div>
-        <div class="control-group" style="padding-left: 80px">
-          <%= f.label :picture, "Upload Item Image:" %>
-          <input type="text" name="upload_picture" />
+    <div class="control-group">
+        <label class="control-label" for="item_name">Add a Picture: </label> <%= f.text_field :picture, placeholder: "Add a picture" %>
+    </div>
+        <div>
+          <%= f.label :picture, "Upload Your Avatar:" %>
           <%= f.filepicker_field :picture %> <!-- User#avatar_url is a regular string column -->
         </div>
-    <div class="control-group" style="padding-left: 185px;">
+
     <%= f.submit %>
-    </div>
   </div>
 <% end %>
 </div>
