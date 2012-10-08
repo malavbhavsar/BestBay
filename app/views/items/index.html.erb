@@ -31,6 +31,7 @@
         </tr>
         <tbody id='itemsbody'>
         <% @items.each do |item| %>
+
             <tr>
               <td><%= item.name %></td>
               <td><img src='<%= item.picture %>' height="200" width="200"></td>
@@ -38,6 +39,7 @@
               <td><%= item.opening_bid %></td>
               <td><%= item.highest_bid %></td>
               <td><%= link_to 'Show', item %></td>
+              <td><%= button_to 'Add to Cart', line_items_path(item_id: item) %></td>
               <!--<td><%= link_to 'Edit', edit_item_path(item) %></td>-->
               <!--<td><%= link_to 'Destroy', item, method: :delete, data: {confirm: 'Are you sure?'} %></td>-->
             </tr>

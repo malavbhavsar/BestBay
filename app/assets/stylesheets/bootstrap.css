@@ -5725,6 +5725,12 @@ a.badge:hover {
   margin-bottom: 0;
 }
 
+.carousel {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;

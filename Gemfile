@@ -21,12 +21,12 @@ group :test do
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'cucumber-rails-training-wheels'
-  gem 'pg'
+  #gem 'pg'
 end
 
-group :production do
-  gem 'pg'
-end
+#group :production do
+#  gem 'pg'
+#end
 
 
 # Gems used only for assets and not required

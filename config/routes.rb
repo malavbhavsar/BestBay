@@ -1,4 +1,10 @@
 BestBay::Application.routes.draw do
+  resources :products
+
+  resources :line_items
+
+  resources :carts
+
   devise_for :users, :controllers => { :omniauth_callbacks => "my_omniauth_callbacks" }
 
   resources :items
