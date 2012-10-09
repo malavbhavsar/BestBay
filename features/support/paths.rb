@@ -21,9 +21,12 @@ module NavigationHelpers
       interpreter_path
     when /^the players list page$/
       players_path
+    when /^items page$/
+      items_path
     when /^the item page for "(.+)"$/
       item_path(Item.find_by_name($1).id)
-
+    when /^new_user_registration_path$/
+      new_user_registration_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
