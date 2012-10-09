@@ -1,6 +1,6 @@
 class CreateCarts < ActiveRecord::Migration
   def change
-    create_table :carts do |t|
+    create_table :wishlists do |t|
 
       t.timestamps
     end

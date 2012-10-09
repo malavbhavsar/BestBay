@@ -1,3 +1,3 @@
-class Cart < ActiveRecord::Base
+class Wishlist < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
 end

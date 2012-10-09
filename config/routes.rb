@@ -1,7 +1,7 @@
 BestBay::Application.routes.draw do
   resources :line_items
 
-  resources :carts
+  resources :wishlists
 
   devise_for :users, :controllers => { :omniauth_callbacks => "my_omniauth_callbacks" }
 
