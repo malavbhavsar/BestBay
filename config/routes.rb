@@ -1,6 +1,4 @@
 BestBay::Application.routes.draw do
-  resources :products
-
   resources :line_items
 
   resources :carts

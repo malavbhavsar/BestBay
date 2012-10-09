@@ -1,13 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'filepicker-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
   gem 'sqlite3'
-#  gem 'debugger'
+  gem 'debugger'
 end
 
 group :test do
@@ -21,12 +20,12 @@ group :test do
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'cucumber-rails-training-wheels'
-  #gem 'pg'
+  gem 'pg'
 end
 
-#group :production do
-#  gem 'pg'
-#end
+group :production do
+  gem 'pg'
+end
 
 
 # Gems used only for assets and not required
@@ -48,6 +47,8 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 
 gem 'yettings'
+
+gem 'filepicker-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

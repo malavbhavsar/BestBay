@@ -1,15 +1,4 @@
 class CartsController < ApplicationController
-  # GET /carts
-  # GET /carts.json
-  def index
-    @carts = Cart.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @carts }
-    end
-  end
-
   # GET /carts/1
   # GET /carts/1.json
   def show
@@ -30,11 +19,6 @@ class CartsController < ApplicationController
       format.html # new.html.erb
       format.json { render json: @cart }
     end
-  end
-
-  # GET /carts/1/edit
-  def edit
-    @cart = Cart.find(params[:id])
   end
 
   # POST /carts
