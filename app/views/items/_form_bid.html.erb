@@ -1,0 +1,14 @@
+<div class="row-fluid">
+  <div class="span9 product_area">
+    <%= form_for @item, :html => { :class => "form-horizontal" } do |f| %>
+        <div>
+          <label class="control-label" for="item_name">place Your Bid: </label> <%= f.text_field :highest_bid, placeholder: "Enter your bid amount" %>
+        </div>
+        <div class="control-group btn-block" style="padding-left: 185px;">
+          <%= f.submit "Place Bid"%>
+        </div>
+        </div>
+    <% end %>
+    </div>
+</div>
+
