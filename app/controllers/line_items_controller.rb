@@ -40,11 +40,11 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    @wishlist = current_cart
+    @wishlist = current_wishlist
     #product = Product.find(params[:product_id])
     item = Item.find(params[:item_id])
     #@line_item = @cart.line_items.build(product: product)
-    @line_item = @wishlist.line_items.build(item: item)
+    @line_item = @wishlist.line_items.create(item: item)
 
     respond_to do |format|
       if @line_item.save

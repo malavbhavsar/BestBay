@@ -9,12 +9,11 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
-  def current_cart
-    Wishlist.find(session[:cart_id])
-  rescue ActiveRecord::RecordNotFound
-    cart = Wishlist.create
-    session[:cart_id] = cart.id
-    cart
+  def current_wishlist
+    if current_user.wishlist.nil?
+      current_user.create_wishlist
+    else
+      current_user.wishlist
+    end
   end
-
 end

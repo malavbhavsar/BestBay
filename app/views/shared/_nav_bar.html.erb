@@ -15,9 +15,8 @@
           <li><%= link_to 'All items', items_path %></li>
         </ul>
         <ul class="nav pull-right">
-          <!--<li>
-          <= link_to "My cart", cart_path(current_cart) %></li>-->
           <%if user_signed_in?%>
+            <li><%= link_to "My wishlist", wishlist_path(current_user.wishlist) %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
           <% else %>
             <li class="dropdown" id="login_menu">
@@ -27,7 +26,6 @@
               </div>
             </li>
             <li><%= link_to "Sign up", new_user_registration_path %></li>
-            <li><%= link_to "Preview", items_path %></li>
           <% end %>
         </ul>
       </div><!--/.nav-collapse -->
