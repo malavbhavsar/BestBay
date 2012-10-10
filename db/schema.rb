@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(:version => 20121005194522) do
   create_table "line_items", :force => true do |t|
     t.integer  "item_id"
     t.integer  "wishlist_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "quantity",    :default => 1
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "users", :force => true do |t|

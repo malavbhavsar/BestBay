@@ -16,7 +16,7 @@
         </ul>
         <ul class="nav pull-right">
           <%if user_signed_in?%>
-            <li><%= link_to "My wishlist", wishlist_path(current_user.wishlist) %></li>
+            <li><%= link_to "My wishlist", wishlist_path(current_wishlist) %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
           <% else %>
             <li class="dropdown" id="login_menu">
