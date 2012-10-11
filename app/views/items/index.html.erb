@@ -40,8 +40,6 @@
               <td><%= item.highest_bid %></td>
               <td><%= link_to 'Show', item %></td>
               <td><%= button_to 'Add to Wishlist', line_items_path(item_id: item) %></td>
-              <!--<td><%= link_to 'Edit', edit_item_path(item) %></td>-->
-              <!--<td><%= link_to 'Destroy', item, method: :delete, data: {confirm: 'Are you sure?'} %></td>-->
             </tr>
         <% end %>
         </tbody>

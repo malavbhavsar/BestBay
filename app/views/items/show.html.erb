@@ -1,12 +1,10 @@
-<% link_to 'Edit', edit_item_path(@item) %>
-<% link_to 'Back', items_path %>
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span3">
       <div class="well sidebar-nav">
         <ul class="nav nav-list">
           <!--<li class="nav-header">Sidebar</li>-->
-          <li><%= link_to image_tag('thumb.jpeg', :alt => @item.name) %></li>
+          <li><%=image_tag('thumb.jpeg', :alt => @item.name) %></li>
           <li>Name: Harshad Mande</li>
           <li>Addr: Pitt, PA</li>
           <li>Tel.: 412-378-5298</li>

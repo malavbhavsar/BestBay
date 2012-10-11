@@ -7,13 +7,14 @@ gem 'rails', '3.2.8'
 group :development, :test do
   gem 'sqlite3'
   gem 'debugger'
+  gem 'launchy'
 end
 
 group :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'capybara'
-  gem 'launchy'
+  gem 'webrat'
   gem 'rspec-rails'
   gem 'ZenTest'
   gem 'simplecov'
