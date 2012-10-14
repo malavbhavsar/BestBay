@@ -7,7 +7,6 @@ Feature: Sign up
     Given I am not logged in
     And I go to new_user_registration_path
 
-  @allow-rescue
 #  Scenario: User signs up with valid data
 #    When I sign up with valid user data
 #    Then I should see a successful sign up message
@@ -15,7 +14,7 @@ Feature: Sign up
 #  Scenario: User signs up with invalid email
 #    When I sign up with an invalid email
 #    Then I should see an invalid email message
-
+  @allow-rescue
   Scenario: User signs up without password
     When I sign up without a password
     Then I should see a missing password message
