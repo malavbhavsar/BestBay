@@ -39,7 +39,7 @@
               <td><%= item.opening_bid %></td>
               <td><%= item.highest_bid %></td>
               <td><%= link_to 'Show', item %></td>
-              <td><%= button_to 'Add to Wishlist', line_items_path(item_id: item) %></td>
+              <td><%= link_to 'Add to Wishlist', line_items_path(item_id: item) %></td>
             </tr>
         <% end %>
         </tbody>

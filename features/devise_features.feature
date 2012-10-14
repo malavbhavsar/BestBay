@@ -1,31 +1,29 @@
-Feature: Devise integration
-  In order to keep my data safe
-  User
-  I want to have sign in, sign out and sign up mechanism
+Feature: Sign up
+  In order to get access to protected sections of the site
+  As a user
+  I want to be able to sign up
 
-@allow-rescue
-Scenario: Creating a new account
-Given I am not authenticated
-When I go to new_user_registration_path
-And I fill in "user_email" with "testing@man.net"
-And I fill in "user_password" with "secretpass"
-And I fill in "user_password_confirmation" with "secretpass"
-And I press "Sign up"
-Then I should be on items page
-Then I should see "Welcome! You have signed up successfully."
+  Background:
+    Given I am not logged in
+    And I go to new_user_registration_path
 
-# To check the sign in
+  @allow-rescue
+#  Scenario: User signs up with valid data
+#    When I sign up with valid user data
+#    Then I should see a successful sign up message
 
-# To check the forget password
+#  Scenario: User signs up with invalid email
+#    When I sign up with an invalid email
+#    Then I should see an invalid email message
 
-#Examples:
-#| email           | password   |
-#| testing@man.net | secretpass |
-#| foo@bar.com     | fr33z3     |
+  Scenario: User signs up without password
+    When I sign up without a password
+    Then I should see a missing password message
 
-#Scenario: Willing to edit my account
-#Given I am a new, authenticated user # beyond this step, your work!
-#When I want to edit my account
-#Then I should see the account initialization form
-#And I should see "Your account has not been initialized yet. Do it now!"
-# And more view checking stuff
+#  Scenario: User signs up without password confirmation
+#    When I sign up without a password confirmation
+#    Then I should see a missing password confirmation message
+
+  Scenario: User signs up with mismatched password and confirmation
+    When I sign up with a mismatched password confirmation
+    Then I should see a mismatched password message
