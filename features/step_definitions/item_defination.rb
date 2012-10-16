@@ -23,7 +23,6 @@ end
 
 And /^I follow "([^"]*)" for "([^"]*)"$/ do |link,item|
   page.all("table#items tbody#itemsbody tr").each do |tr_node|
-    print tr_node.native
     if tr_node.all("td")[1].text == item
       within(tr_node) do
         click_link link_name
