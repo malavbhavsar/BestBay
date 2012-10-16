@@ -11,7 +11,7 @@ Feature: Details of the item are provided
 
   Scenario: Going to the item details page from items page
 
-    Given I am a new, authenticated user
+    Given I am logged in
     Given I am on the items page
     And I follow "Show" for "snow whit"
     Then I am on the item page for "snow whit"
