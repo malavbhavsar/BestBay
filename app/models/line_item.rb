@@ -4,7 +4,7 @@ class LineItem < ActiveRecord::Base
   belongs_to :wishlist
 
   def total_price
-    item.highest_bid * quantity
+    (item.highest_bid.nil? ? item.opening_bid: item.highest_bid) * quantity
   end
 
 end
