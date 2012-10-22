@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_filter :authenticate_user!, :only => [:new, :create, :show, :index]
+  before_filter :authenticate_user!, :only => [:new, :create, :show, :index, :update]
 
   # GET /items
   # GET /items.json
@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(params[:item])
-
+    @item.user_id = current_user.id
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
