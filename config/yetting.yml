@@ -1,11 +1,17 @@
 development:
   client_id: 723322219157.apps.googleusercontent.com
   client_secret: Ht6c_So4eO1KmOdJ_SDwkpLk
+  recaptcha_public_key: 6LcMFNgSAAAAAH849QYCTp4k-haypN-19zc4AMEj
+  recaptcha_private_key: 6LcMFNgSAAAAAKcqTWdXNRDROOI7-PVmid9Zv8az
 
 test:
   client_id: 723322219157.apps.googleusercontent.com
   client_secret: Ht6c_So4eO1KmOdJ_SDwkpLk
+  recaptcha_public_key: 6LcMFNgSAAAAAH849QYCTp4k-haypN-19zc4AMEj
+  recaptcha_private_key: 6LcMFNgSAAAAAKcqTWdXNRDROOI7-PVmid9Zv8az
 
 production:
   client_id: 723322219157-3cqfqdcnsq80d9u69hvvfgh710qubale.apps.googleusercontent.com
   client_secret: aIs1pHwh4BNUm9vvtbDhYFSx
+  recaptcha_public_key: 6LcWFdgSAAAAAFf3Vagdahi5Cnu3S9_oqUs3p8xV
+  recaptcha_private_key: 6LcWFdgSAAAAALaGHOABGj2DPj8jFZdaLPL3GJy1

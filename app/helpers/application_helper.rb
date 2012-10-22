@@ -6,6 +6,7 @@ module ApplicationHelper
       when :notice then "info"
       when :error then "error"
       when :alert then "error"
+      when :recaptcha_error then "error"
       else "block"
     end
   end

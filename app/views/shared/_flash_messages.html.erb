@@ -1,5 +1,5 @@
 <% devise_error_messages! %>
-<% [:success, :info, :notice, :error, :alert].each do |level| %>
+<% [:success, :info, :notice, :error, :alert, :recaptcha_error].each do |level| %>
     <% unless flash.nil? or flash[level].blank? %>
         <div class="alert alert-<%= flash_class(level) %>">
           <button type="button" class="close" data-dismiss="alert">×</button>
