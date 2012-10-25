@@ -10,9 +10,6 @@
           padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
   </style>
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= filepicker_js_include_tag %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -24,6 +21,10 @@
   <%= yield %>
   <hr>
   <%= render 'layouts/footer' %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= filepicker_js_include_tag %>
+  <%= javascript_include_tag "bootstrap" %>
 </div>
 </body>
 </html>

@@ -17,7 +17,7 @@
       <%= render 'shared/search_box' %>
     </div>
     <div class="span9 well">
-      <div class="span4"><%= filepicker_image_tag @item.picture, w: 160, h: 160, fit: 'clip' %></div>
+      <div class="span4"><%= filepicker_image_tag( @item.picture, {w: 160, h: 160, fit: 'clip'}, true) %></div>
       <div class="span7 product_details">
         Name: <%= @item.name %>
         <br>

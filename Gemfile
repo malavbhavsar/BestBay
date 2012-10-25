@@ -33,6 +33,7 @@ end
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem 'bootstrap-sass'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -49,7 +50,7 @@ gem 'omniauth-google-oauth2'
 
 gem 'yettings'
 
-gem 'filepicker-rails'
+gem 'filepicker-rails', :git => "git@github.com:malavbhavsar/filepicker-rails"
 
 gem 'recaptcha', :require => 'recaptcha/rails'
 
