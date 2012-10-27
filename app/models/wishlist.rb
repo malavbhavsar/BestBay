@@ -1,5 +1,7 @@
 class Wishlist < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
+  belongs_to :user
+  attr_accessible :name
 
   def add_product(item_id)
     current_item = line_items.find_by_item_id(item_id)

@@ -8,12 +8,4 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource)
     root_path
   end
-
-  def current_wishlist
-    if current_user.wishlist.nil?
-      current_user.create_wishlist
-    else
-      current_user.wishlist
-    end
-  end
 end

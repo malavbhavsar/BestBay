@@ -38,7 +38,10 @@
               <td><%= item.opening_bid %></td>
               <td><%= item.highest_bid %></td>
               <td><%= link_to 'Show', item %></td>
-              <td><%= link_to 'Add to Wishlist', line_items_path(item_id: item), :method => :post %></td>
+              <%= form_tag line_items_path(item_id: item) do%>
+                <td><%= select_tag "wishlist_id", options_from_collection_for_select(current_user.wishlists, "id", "name"), :include_blank => true, :class => 'form_input'%> </td>
+                <td><%= submit_tag 'Add to Wishlist' %></td>
+              <% end %>
             </tr>
         <% end %>
         </tbody>

@@ -1,4 +1,13 @@
 class WishlistsController < ApplicationController
+
+  def index
+    @wishlists = current_user.wishlists
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @wishlists }
+    end
+  end
+
   # GET /carts/1
   # GET /carts/1.json
   def show
@@ -24,7 +33,7 @@ class WishlistsController < ApplicationController
   # POST /carts
   # POST /carts.json
   def create
-    @wishlist = Wishlist.new(params[:wishlist])
+    @wishlist = current_user.wishlists.build(params[:wishlist])
 
     respond_to do |format|
       if @wishlist.save
@@ -63,5 +72,9 @@ class WishlistsController < ApplicationController
       format.html { redirect_to items_url }
       format.json { head :no_content }
     end
+  end
+
+  def edit
+    @wishlist = Wishlist.find(params[:id])
   end
 end

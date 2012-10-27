@@ -40,10 +40,12 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    @wishlist = current_wishlist
-    #product = Product.find(params[:product_id])
+    if current_user.wishlists.empty?
+      @wishlist = current_user.wishlists.create!(:name=>"default wishlist")
+    else
+      @wishlist = current_user.wishlists.find(params[:wishlist_id])
+    end
     item = Item.find(params[:item_id])
-    #@line_item = @cart.line_items.build(product: product)
     @line_item = @wishlist.line_items.create(item: item)
 
     respond_to do |format|
