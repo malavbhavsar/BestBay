@@ -1,6 +1,7 @@
 class WishlistsController < ApplicationController
 
   def index
+    @wishlist = Wishlist.new
     @wishlists = current_user.wishlists
     respond_to do |format|
       format.html # index.html.erb
@@ -12,7 +13,6 @@ class WishlistsController < ApplicationController
   # GET /carts/1.json
   def show
     @wishlist = Wishlist.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @wishlist }

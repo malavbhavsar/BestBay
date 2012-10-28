@@ -1,0 +1,18 @@
+<%= wishlist.name  %> |
+<%= link_to 'Edit', edit_wishlist_path(wishlist) %> |
+<%= link_to 'Destroy', wishlist, method: :delete, data: { confirm: 'Are you sure?' } %>
+<table>
+  <% wishlist.line_items.each do |item| %>
+      <tr>
+        <td><%= item.quantity %>&times;</td>
+        <td><%= item.item.name %></td>
+        <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+      </tr>
+  <% end %>
+
+  <tr class="total_line">
+    <td colspan="2">Total</td>
+    <td class="total_cell"><%= number_to_currency(wishlist.total_price) %></td>
+  </tr>
+</table>
+<%= button_to 'Empty wishlist', wishlist, method: :delete, class: 'btn' ,confirm: 'Are you sure?' %>

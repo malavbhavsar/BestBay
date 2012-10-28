@@ -1,26 +1,5 @@
-<h1>Listing wishlists</h1>
-
-<table id='wishlists'>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-  <tbody id='wishlistsbody'>
-  <% @wishlists.each do |wishlist| %>
-      <tr>
-        <td><%= wishlist.name  %></td>
-        <%  wishlist.line_items.each do |line_item| %>
-            <%= line_item.item %>
-        <% end %>
-        <td><%= link_to 'Show', wishlist %></td>
-        <td><%= link_to 'Edit', edit_wishlist_path(wishlist) %></td>
-        <td><%= link_to 'Destroy', wishlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<br />
-
-<%= link_to 'New Wishlist', new_wishlist_path %>
+<h1>Wishlists</h1>
+<hr>
+<%= render :partial => 'show_template', :collection => @wishlists, :as => :wishlist, :spacer_template => "layouts/hr" %>
+<hr>
+<%= render 'new_template', :wishlist => @wishlist %>

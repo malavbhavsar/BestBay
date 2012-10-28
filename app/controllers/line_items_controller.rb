@@ -50,10 +50,10 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.wishlist, notice: 'Line item was successfully created.' }
+        format.html { redirect_to wishlists_path, notice: 'Line item was successfully created.' }
         format.json { render json: @line_item, status: :created, location: @line_item }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to wishlists_path , error: 'Line item could not be created' }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
