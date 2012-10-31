@@ -50,7 +50,7 @@ gem 'omniauth-google-oauth2'
 
 gem 'yettings'
 
-gem 'filepicker-rails', :git => "git@github.com:malavbhavsar/filepicker-rails"
+gem 'filepicker-rails', :git => "git://github.com/malavbhavsar/filepicker-rails"
 
 gem 'recaptcha', :require => 'recaptcha/rails'
 

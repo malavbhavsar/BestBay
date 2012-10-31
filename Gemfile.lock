@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:malavbhavsar/filepicker-rails
+  remote: git://github.com/malavbhavsar/filepicker-rails
   revision: a56021de3a8b96876e7922a09efc4a597bb0dac3
   specs:
     filepicker-rails (0.0.2)
