@@ -13,13 +13,10 @@
     </div>
     <div class="span9">
       <%= render 'shared/search_box' %>
-      <a class="btn btn-primary btn-block btn-small">All Fashion Categories &raquo;</a>
-    </div>
-  </div>
-  <div class="row-fluid">
-    <div class="span3 well">
-    </div>
-    <div class="span9 well">
+      <ul class="breadcrumb">
+        <li class="active">All Fashion items</li>
+      </ul>
+      <div class="well">
       <table id='items' class="table">
         <tr>
           <th>Name</th>
@@ -28,6 +25,7 @@
           <th>Opening Bid</th>
           <th>Highest Bid</th>
           <th>View Details</th>
+          <th>Add to list</th>
         </tr>
         <tbody id='itemsbody'>
         <% @items.each do |item| %>
@@ -38,14 +36,28 @@
               <td><%= item.opening_bid %></td>
               <td><%= item.highest_bid %></td>
               <td><%= link_to 'Show', item %></td>
-              <%= form_tag line_items_path(item_id: item) do%>
-                <td><%= select_tag "wishlist_id", options_from_collection_for_select(current_user.wishlists, "id", "name"), :include_blank => true, :class => 'form_input'%> </td>
-                <td><%= submit_tag 'Add to Wishlist' %></td>
-              <% end %>
+              <td>
+              <div class="btn-group">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                  Add to
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+
+                  <% current_user.wishlists.each do |wishlist|%>
+                      <li>
+                        <%= link_to wishlist.name, {:controller=>'line_items', :action=>'create' ,:item_id => item.id, :wishlist_id => wishlist.id}, :method => :post %>
+                      </li>
+                  <% end %>
+
+                </ul>
+              </div>
+              </td>
             </tr>
         <% end %>
         </tbody>
       </table>
+      </div>
     </div>
   </div>
 </div>

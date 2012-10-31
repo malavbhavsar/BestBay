@@ -1,50 +1,35 @@
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span3">
-      <div class="well sidebar-nav">
+      <div class="well">
         <ul class="nav nav-list">
-          <!--<li class="nav-header">Sidebar</li>-->
           <li><%=image_tag('thumb.jpeg', :alt => @item.name) %></li>
           <li>Name: Harshad Mande</li>
           <li>Addr: Pitt, PA</li>
           <li>Tel.: 412-378-5298</li>
         </ul>
       </div>
-      <!--/.well -->
     </div>
-    <!--/span-->
     <div class="span9">
       <%= render 'shared/search_box' %>
-    </div>
-    <div class="span9 well">
-      <div class="span4"><%= filepicker_image_tag( @item.picture, {w: 160, h: 160, fit: 'clip'}, true) %></div>
-      <div class="span7 product_details">
-        Name: <%= @item.name %>
-        <br>
-        Description: <%= @item.description %>
-        <br>
-        Opening bid: <%= @item.opening_bid %>
-        <br>
-        Highest bid: <%= @item.highest_bid %>
-        <br>
-      </div>
-      <div class="span11 well">
-        <div class="span4">-
-          <!--<a class="btn btn-primary btnblock btn-large">Place a Bid &raquo;</a>-->
+      <div class="well">
+        <div class="row-fluid">
+          <div class="span3"><%= filepicker_image_tag( @item.picture, {w: 160, h: 160, fit: 'clip'}, true) %></div>
+          <div class="span6">
+            Name: <%= @item.name %>
+            <br>
+            Description: <%= @item.description %>
+            <br>
+            Opening bid: <%= @item.opening_bid %>
+            <br>
+            Highest bid: <%= @item.highest_bid %>
+            <br>
+          </div>
+        </div>
+        <div>
           <%= render "items/form_bid" %>
         </div>
-        <div class="span4">
-          <a class="btn btn-primary btn-block btn-large">Buy Right Now &raquo;</a>
-        </div>
-        <div class="span4">
-          <a class="btn btn-primary btn-block btn-large">Rent &raquo;</a>
-        </div>
       </div>
     </div>
   </div>
-  <!--/row-->
-  <div class="row-fluid">
-  </div>
 </div><!--/.fluid-container-->
-
-
