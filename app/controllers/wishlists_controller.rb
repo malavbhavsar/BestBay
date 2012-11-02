@@ -37,8 +37,8 @@ class WishlistsController < ApplicationController
 
     respond_to do |format|
       if @wishlist.save
-        format.html { redirect_to @wishlist, notice: 'Wishlist was successfully created.' }
-        format.json { render json: @wishlist, status: :created, location: @wishlist }
+        format.html { redirect_to wishlists_url, notice: 'Wishlist was successfully created.' }
+        format.json { redirect_to wishlists_url }
       else
         format.html { render action: "new" }
         format.json { render json: @wishlist.errors, status: :unprocessable_entity }
@@ -53,13 +53,24 @@ class WishlistsController < ApplicationController
 
     respond_to do |format|
       if @wishlist.update_attributes(params[:wishlist])
-        format.html { redirect_to @wishlist, notice: 'Wishlist was successfully updated.' }
+        format.html { redirect_to wishlists_url, notice: 'Wishlist was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @wishlist.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def empty_wishlist
+    @wishlist = Wishlist.find(params[:id])
+    @wishlist.line_items.each {|li| li.destroy}
+
+    respond_to do |format|
+      format.html {redirect_to wishlists_url}
+      format.json {redirect_to wishlists_url}
+    end
+
   end
 
   # DELETE /carts/1
@@ -69,7 +80,7 @@ class WishlistsController < ApplicationController
     @wishlist.destroy
 
     respond_to do |format|
-      format.html { redirect_to items_url }
+      format.html { redirect_to wishlists_url }
       format.json { head :no_content }
     end
   end
