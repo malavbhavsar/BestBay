@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     @item = Item.find(params[:id])
+    @highest_bid = @item.bids.all(:order => "amount DESC").first.amount
 
     respond_to do |format|
       format.html # show.html.erb
@@ -64,6 +65,20 @@ class ItemsController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def bid
+    if current_user == Item.find(params[:item_id]).user
+      flash[:error] = "Can't place bid on your own item."
+    elsif Item.find(params[:item_id]).bids.all(:order => "amount DESC").first.amount >= params[:bid_amount].to_f
+      flash[:error] = "Your bid needs to be greater than highest bid"
+    else
+      Bid.create!(:user_id => current_user.id, :item_id => params[:item_id], :amount => params[:bid_amount])
+    end
+    respond_to do |format|
+      format.html {redirect_to Item.find(params[:item_id])}
+      format.json {recirect_to Item.fina(params[:item_id])}
     end
   end
 end

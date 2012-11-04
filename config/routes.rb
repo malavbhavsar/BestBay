@@ -4,6 +4,8 @@ BestBay::Application.routes.draw do
 
   match '/empty_wishlist/:id', :to => 'wishlists#empty_wishlist', :as => 'empty_wishlist'
 
+  match '/bid/:item_id', :to => 'items#bid', :as => 'bid'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "my_omniauth_callbacks", :registrations => "registrations" }
 
   resources :items

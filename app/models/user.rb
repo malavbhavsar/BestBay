@@ -10,8 +10,9 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :wishlists
-
   has_many :items
+  has_many :bids
+  has_many :items, :through => :bids
 
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info

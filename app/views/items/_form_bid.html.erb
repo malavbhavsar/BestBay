@@ -1,13 +1,13 @@
-    <%= form_for @item, :html => { :class => "form-horizontal" } do |f| %>
-        <div class="control-group">
-          <label class="control-label" for="item_name">Bid: </label>
-          <div class="controls">
-            <%= f.text_field :highest_bid%>
-          </div>
+<%= form_tag bid_path(@item.id), :html => { :class => "form-horizontal" } do %>
+    <div class="control-group">
+        <label class="control-label" for="item_name">Bid: </label>
+        <div class="controls">
+            <%= number_field_tag :bid_amount%>
         </div>
-        <div class="control-group">
-          <div class="controls">
-            <%= f.submit "Submit", :class=>"btn btn-primary" %>
-          </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <%= submit_tag "Submit", :class=>"btn btn-primary" %>
         </div>
-    <% end %>
+    </div>
+<% end %>
