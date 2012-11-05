@@ -4,6 +4,5 @@ FactoryGirl.define do
     picture 'http://www.google.com/images/srpr/logo3w.png'
     description 'Fake description'
     opening_bid 10
-    highest_bid 20
   end
 end
