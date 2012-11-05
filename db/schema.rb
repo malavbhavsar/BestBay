@@ -26,9 +26,10 @@ ActiveRecord::Schema.define(:version => 20121102185639) do
     t.string   "picture"
     t.text     "description"
     t.float    "opening_bid"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.integer  "user_id"
+    t.datetime "closing_date"
   end
 
   create_table "line_items", :force => true do |t|

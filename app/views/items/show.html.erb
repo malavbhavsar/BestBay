@@ -22,13 +22,24 @@
             <br>
             Opening bid: <%= @item.opening_bid %>
             <br>
-            Highest bid: <%= @highest_bid %>
+            Highest bid: <%= @item.highest_bid %>
             <br>
+            Closing Date: <%= @item.closing_date.to_s %>
+            <br>
+            Current Time: <%= @current_time %>
+            <br>
+            <% if @check_time > 0 %>
+            Auction closes in: <%= @check_time.to_s %>  hrs
+            <% else %>
+            Auction is closed :(
+            <% end %>
           </div>
         </div>
+        <% if @check_time > 0 %>
         <div>
           <%= render "items/form_bid" %>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
