@@ -16,8 +16,8 @@ describe ItemsController do
   end
 
   before :each do
-    @i1 = FactoryGirl.build(:item, :id=>1, :name => 'A', :description => "A is A", :highest_bid => 10)
-    @i2 = FactoryGirl.build(:item, :id=>2, :name => 'B', :description => "B is B", :highest_bid => 10)
+    @i1 = FactoryGirl.build(:item, :id=>1, :name => 'A', :description => "A is A")
+    @i2 = FactoryGirl.build(:item, :id=>2, :name => 'B', :description => "B is B")
     @fake_results = [@i1, @i2]
   end
   describe 'show all the items' do
