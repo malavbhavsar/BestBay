@@ -17,6 +17,8 @@ end
 
 module BestBay
   class Application < Rails::Application
+    require "#{Rails.root.to_s}/lib/worker.rb"
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

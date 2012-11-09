@@ -6,6 +6,8 @@ BestBay::Application.routes.draw do
 
   match '/bid/:item_id', :to => 'items#bid', :as => 'bid'
 
+  match '/pay_for_all/:wishlist_id', :to => 'wishlists#pay_for_all', :as => 'pay_for_all'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "my_omniauth_callbacks", :registrations => "registrations" }
 
   resources :items
@@ -15,6 +17,8 @@ BestBay::Application.routes.draw do
   match '/help',    to: 'static_pages#help',   as: 'help'
   match '/about',   to: 'static_pages#about',  as: 'about'
   match '/contact', to: 'static_pages#contact',as: 'contact'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

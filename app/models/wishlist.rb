@@ -10,6 +10,7 @@ class Wishlist < ActiveRecord::Base
     else
       current_item = line_items.build(item_id: item_id)
     end
+    print line_items
     current_item
   end
 

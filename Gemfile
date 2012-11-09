@@ -8,6 +8,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'debugger'
   gem 'launchy'
+  gem 'railroady'
 end
 
 group :test do
@@ -53,6 +54,16 @@ gem 'yettings'
 gem 'filepicker-rails', :git => "git://github.com/malavbhavsar/filepicker-rails"
 
 gem 'recaptcha', :require => 'recaptcha/rails'
+
+gem 'clockwork'
+
+gem 'delayed_job', :git => 'https://github.com/collectiveidea/delayed_job'
+
+gem 'delayed_job_active_record', :git => 'git://github.com/collectiveidea/delayed_job_active_record.git'
+
+gem 'daemons'
+
+gem "active_paypal_adaptive_payment"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

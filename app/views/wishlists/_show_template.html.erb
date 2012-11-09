@@ -1,6 +1,9 @@
 <%= wishlist.name  %> |
 <%= link_to 'Edit', edit_wishlist_path(wishlist) %> |
-<%= link_to 'Destroy', wishlist, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Destroy', wishlist, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<% if wishlist.name == 'bids won' %>
+    <%=  link_to 'Pay for all', pay_for_all_path(wishlist.id) %>
+<%end%>
 <table>
   <% wishlist.line_items.each do |line_item| %>
       <tr>

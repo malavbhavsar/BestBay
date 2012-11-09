@@ -4,5 +4,6 @@ FactoryGirl.define do
     picture 'http://www.google.com/images/srpr/logo3w.png'
     description 'Fake description'
     opening_bid 10
+    closing_date {6.months.from_now}
   end
 end

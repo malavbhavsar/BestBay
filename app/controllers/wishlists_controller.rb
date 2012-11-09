@@ -1,5 +1,5 @@
 class WishlistsController < ApplicationController
-
+before_filter :set_gateway, :only => [:pay_for_all]
   def index
     @wishlist = Wishlist.new
     @wishlists = current_user.wishlists
@@ -87,5 +87,34 @@ class WishlistsController < ApplicationController
 
   def edit
     @wishlist = Wishlist.find(params[:id])
+  end
+
+  def pay_for_all
+    wishlist = Wishlist.find(params[:wishlist_id])
+
+    recipients = Array.new
+
+    wishlist.line_items.each do |line|
+      hash = Hash.new
+      hash[:email] =  line.item.user.email
+      hash[:amount] = line.item.bids.order("amount DESC").first.amount
+      hash[:primary] = false
+      recipients << hash
+    end
+
+    response = $GATEWAY.setup_purchase(
+        :return_url => url_for(:controller => 'items', :action => 'index', :only_path => false),
+        :cancel_url => url_for(:controller => 'items', :action => 'index', :only_path => false),
+        #:ipn_notification_url => url_for(:action => 'notify_action', :only_path => false),
+        :receiver_list => recipients
+    )
+
+    # For redirecting the customer to the actual paypal site to finish the payment.
+    redirect_to ($GATEWAY.redirect_url_for(response["payKey"]))
+
+  end
+
+  def set_gateway
+    $GATEWAY ||=  ActiveMerchant::Billing::PaypalAdaptivePayment.new(login: "malav._1351481484_biz_api1.gmail.com",password: "1351481552",signature: "Aj4mir6IgIKZGlDRuN6m0EjAIoBwA.wRjI10neb0SysL4f5Jw-srduc-",appid: "APP-80W284485P519543T")
   end
 end
