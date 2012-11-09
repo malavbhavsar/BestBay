@@ -40,6 +40,32 @@
           <%= render "items/form_bid" %>
         </div>
         <% end %>
+        <table class="table table-bordered">
+          <tr>
+            <th>
+              User
+            </th>
+            <th>
+              Amount
+            </th>
+            <th>
+              Time
+            </th>
+          </tr>
+        <% @item.bids.each do |bid| %>
+          <tr>
+            <td>
+              <%= bid.user.email %>
+            </td>
+            <td>
+              <%= bid.amount %>
+            </td>
+            <td>
+              <%= bid.created_at %>
+            </td>
+          </tr>
+        <% end %>
+        </table>
       </div>
     </div>
   </div>

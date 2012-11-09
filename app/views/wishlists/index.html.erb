@@ -1,5 +1,16 @@
 <h1>Wishlists</h1>
 <hr>
-<%= render :partial => 'show_template', :collection => @wishlists, :as => :wishlist, :spacer_template => "layouts/hr" %>
+<div class="tabbable tabs-left">
+<ul class="nav nav-tabs">
+<% @wishlists.each do |wishlist| %>
+  <li>
+    <a href="#wishlist_id<%=wishlist.id%>" data-toggle="tab"><%=wishlist.name%></a>
+  </li>
+<% end %>
+</ul>
+  <div class="tab-content">
+<%= render :partial => 'show_template', :collection => @wishlists, :as => :wishlist %>
+  </div>
+</div>
 <hr>
 <%= render 'new_template', :wishlist => @wishlist %>

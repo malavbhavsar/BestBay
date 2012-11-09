@@ -18,7 +18,7 @@ BestBay::Application.routes.draw do
   match '/about',   to: 'static_pages#about',  as: 'about'
   match '/contact', to: 'static_pages#contact',as: 'contact'
 
-
+  match '/tracker', to: 'tracker#show', as: 'tracker'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

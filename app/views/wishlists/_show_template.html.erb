@@ -1,3 +1,4 @@
+<div class="tab-pane" id="wishlist_id<%=wishlist.id%>">
 <%= wishlist.name  %> |
 <%= link_to 'Edit', edit_wishlist_path(wishlist) %> |
 <%= link_to 'Destroy', wishlist, method: :delete, data: { confirm: 'Are you sure?' } %> |
@@ -20,3 +21,4 @@
   </tr>
 </table>
 <%= button_to 'Empty wishlist', empty_wishlist_path(wishlist.id), class: 'btn' ,confirm: 'Are you sure?' %>
+</div>
