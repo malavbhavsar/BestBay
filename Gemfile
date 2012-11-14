@@ -63,7 +63,9 @@ gem 'delayed_job_active_record', :git => 'git://github.com/collectiveidea/delaye
 
 gem 'daemons'
 
-gem "active_paypal_adaptive_payment"
+gem 'active_paypal_adaptive_payment'
+
+gem 'redis-search'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

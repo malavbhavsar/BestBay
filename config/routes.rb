@@ -2,17 +2,24 @@ BestBay::Application.routes.draw do
   resources :line_items
   resources :wishlists
 
+  devise_for :users, :controllers => { :omniauth_callbacks => "my_omniauth_callbacks", :registrations => "registrations" }
+
+
+  resources :items do
+    collection do
+      get :search
+    end
+  end
+
+  resources :items
+
+  root to: 'static_pages#home'
+
   match '/empty_wishlist/:id', :to => 'wishlists#empty_wishlist', :as => 'empty_wishlist'
 
   match '/bid/:item_id', :to => 'items#bid', :as => 'bid'
 
   match '/pay_for_all/:wishlist_id', :to => 'wishlists#pay_for_all', :as => 'pay_for_all'
-
-  devise_for :users, :controllers => { :omniauth_callbacks => "my_omniauth_callbacks", :registrations => "registrations" }
-
-  resources :items
-
-  root to: 'static_pages#home'
 
   match '/help',    to: 'static_pages#help',   as: 'help'
   match '/about',   to: 'static_pages#about',  as: 'about'

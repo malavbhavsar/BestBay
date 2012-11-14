@@ -1,4 +1,5 @@
 class Item < ActiveRecord::Base
+  include Redis::Search
   attr_accessible :name, :user_id, :picture, :description, :opening_bid, :highest_bid, :closing_date
   has_many :line_items
   has_many :bids
@@ -7,6 +8,14 @@ class Item < ActiveRecord::Base
   before_destroy :ensure_not_referenced_by_any_line_item
   validates :name, presence: true
   validates :opening_bid, presence: true
+
+
+
+  redis_search_index(:title_field => :name,
+                     :alias_field => :name,
+                     :prefix_index_enable => true,
+                     :score_field => :highest_bid,
+                     :ext_fields => [:id,:user_id,:picture,:description,:closing_date])
 
 
   def highest_bid

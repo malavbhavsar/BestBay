@@ -90,4 +90,19 @@ class ItemsController < ApplicationController
       format.json {recirect_to Item.find(params[:item_id])}
     end
   end
+
+  def search
+    if params[:q].blank?
+      render :text => ""
+      return
+    end
+    params[:q].gsub!(/'/,'')
+    @search = Redis::Search.complete("Item", params[:q])
+    lines = @search.collect do |item|
+      puts item
+      "#{escape_javascript(item['title'])}#!##{item_path(item['id'])}#!##{item['highest_bid']}#!##{item['closing_date']}#!##{escape_javascript(item['description'])}#!##{item['picture']}"
+    end
+    render :text => lines.join("\n")
+  end
+
 end
