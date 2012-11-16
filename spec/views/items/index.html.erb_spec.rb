@@ -1,6 +1,7 @@
 require "spec_helper"
 
 describe "items/index.html.erb" do
+  login_user
   it "displays the items" do
     items = [FactoryGirl.build(:item), FactoryGirl.build(:item, :name=>"Item 2")]
     assign(:items, items)

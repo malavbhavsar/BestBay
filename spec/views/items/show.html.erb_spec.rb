@@ -2,7 +2,8 @@ require "spec_helper"
 
 describe "items/show.html.erb" do
   it "displays the item" do
-    item = FactoryGirl.build(:item)
+    item = FactoryGirl.create(:item)
+
     assign(:item, item)
     assign(:check_time, Time.parse(item.closing_date.to_s)-Time.parse(DateTime.now.to_s))
 

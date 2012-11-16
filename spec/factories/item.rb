@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :item do
+    id 1
     name 'A Fake Name' # default values
     picture 'http://www.google.com/images/srpr/logo3w.png'
     description 'Fake description'
