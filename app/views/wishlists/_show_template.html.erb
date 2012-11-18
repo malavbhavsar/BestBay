@@ -19,5 +19,5 @@
     <td class="total_cell"><%= number_to_currency(wishlist.total_price) %></td>
   </tr>
 </table>
-<%= button_to 'Empty wishlist', empty_wishlist_path(wishlist.id), class: 'btn' ,confirm: 'Are you sure?' %>
+<%= button_to 'Empty wishlist', empty_wishlist_path(wishlist.id), class: 'btn btn-small' ,confirm: 'Are you sure?' %>
 </div>

@@ -52,7 +52,7 @@
               Time
             </th>
           </tr>
-        <% @item.bids.each do |bid| %>
+        <% @item.bids.order("created_at DESC").each do |bid| %>
           <tr>
             <td>
               <%= bid.user.email %>
