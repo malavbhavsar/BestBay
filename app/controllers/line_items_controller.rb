@@ -41,21 +41,16 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     if current_user.wishlists.empty?
-      @wishlist = current_user.wishlists.create!(:name=>"default wishlist")
+      @wishlist = current_user.wishlists.create!(:name=>"Default Wishlist")
     else
       @wishlist = current_user.wishlists.find(params[:wishlist_id])
     end
     item = Item.find(params[:item_id])
-    @line_item = @wishlist.line_items.create(item: item)
+    @line_item = @wishlist.add_product(item.id)
 
     respond_to do |format|
-      if @line_item.save
-        format.html { redirect_to wishlists_path, notice: 'Line item was successfully created.' }
-        format.json { render json: @line_item, status: :created, location: @line_item }
-      else
-        format.html { redirect_to wishlists_path , error: 'Line item could not be created' }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to wishlists_path, notice: 'Line item was successfully created.' }
+      format.json { render json: @line_item, status: :created, location: @line_item }
     end
   end
 

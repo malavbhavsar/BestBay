@@ -8,9 +8,8 @@
 <table>
   <% wishlist.line_items.each do |line_item| %>
       <tr>
-        <td><%= line_item.quantity %>&times;</td>
         <td><%= link_to(line_item.item.name, item_path(line_item.item.id)) %></td>
-        <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+        <td class="item_price"><%= number_to_currency(line_item.item.highest_bid) %></td>
         <td><%= link_to("Remove", line_item_path(line_item.id), :method =>:delete, :data => {:confirm=>'Are you sure?'} )%></td>
       </tr>
   <% end %>

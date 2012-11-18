@@ -4,18 +4,14 @@ class Wishlist < ActiveRecord::Base
   attr_accessible :name
 
   def add_product(item_id)
-    current_item = line_items.find_by_item_id(item_id)
-    if current_item
-      current_item.quantity += 1
-    else
-      current_item = line_items.build(item_id: item_id)
+    line_item = line_items.find_by_item_id(item_id)
+    if line_item.nil?
+      line_item = line_items.create(item_id: item_id)
     end
-    print line_items
-    current_item
   end
 
   def total_price
-    line_items.to_a.sum { |item| item.total_price }
+    line_items.to_a.sum { |litem| litem.item.highest_bid }
   end
 
 end
