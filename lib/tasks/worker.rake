@@ -1,7 +1,7 @@
 desc "This task is called by the Heroku scheduler add-on"
 task :worker => :environment do
   Item.order("closing_date DESC").each do |item|
-    if item.closing_date.past? ##and check if this process is done before
+    if item.closing_date.past? && item.bids.find_all_by_tracked().empty?##and check if this process is done before
       if item.bids.empty?
         #do something
       else
