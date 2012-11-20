@@ -1,0 +1,44 @@
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#bidswon" data-toggle="tab">Bids Won</a></li>
+    <li class=""><a href="#bids" data-toggle="tab">Bids</a></li>
+    <li class=""><a href="#auctions" data-toggle="tab">Auctions</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="bidswon">
+      <% unless @tracker_won.empty? %>
+          <%=  link_to 'Pay for all', pay_for_all_tracker_path %>
+      <% end %>
+      <table class="table">
+        <% @tracker_won.each do |bid| %>
+            <tr>
+              <td><%= link_to(bid.item.name, item_path(bid.item.id)) %></td>
+              <td class="item_price"><%= number_to_currency(bid.amount) %></td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="tab-pane" id="bids">
+      <table class="table">
+      <% @tracker_bids.each do |bid| %>
+        <tr>
+          <td><%= link_to(bid.item.name, item_path(bid.item.id)) %></td>
+          <td class="item_price"><%= number_to_currency(bid.amount) %></td>
+          <td><%= bid.item.created_at %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+    <div class="tab-pane" id="auctions">
+      <table class="table">
+        <% @tracker_auctions.each do |bid| %>
+            <tr>
+              <td><%= link_to(bid.item.name, item_path(bid.item.id)) %></td>
+              <td class="item_price"><%= number_to_currency(bid.amount) %></td>
+              <td><%= bid.item.created_at %></td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

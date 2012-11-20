@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :wishlists
   has_many :items
   has_many :bids
-  has_many :items, :through => :bids
+  has_many :bid_items, :through => :bids, :class_name => "Item"
 
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info

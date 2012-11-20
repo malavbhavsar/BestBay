@@ -5,7 +5,8 @@ task :worker => :environment do
       if item.bids.empty?
         #do something
       else
-        item.bids.all(:order=>"amount DESC").first.user.wishlists.find_or_create_by_name("Bids Won").line_items.create!(item: item)
+        item.bids.all(:order=>"amount DESC").first.update_attributes!(:tracked => true)
+        #item.bids.all(:order=>"amount DESC").first.user.wishlists.find_or_create_by_name("Bids Won").line_items.create!(item: item)
         print "succeeded----"
       end
     end

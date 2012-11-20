@@ -1,17 +1,17 @@
 BestBay::Application.routes.draw do
-  resources :line_items
-  resources :wishlists
-
   devise_for :users, :controllers => { :omniauth_callbacks => "my_omniauth_callbacks", :registrations => "registrations" }
-
-
   resources :items do
     collection do
       get :search
     end
   end
-
-  resources :items
+  resources :line_items
+  resources :wishlists
+  resource :tracker, :only => [:show] do
+    member do
+      get :pay_for_all
+    end
+  end
 
   root to: 'static_pages#home'
 
@@ -19,13 +19,9 @@ BestBay::Application.routes.draw do
 
   match '/bid/:item_id', :to => 'items#bid', :as => 'bid'
 
-  match '/pay_for_all/:wishlist_id', :to => 'wishlists#pay_for_all', :as => 'pay_for_all'
-
   match '/help',    to: 'static_pages#help',   as: 'help'
   match '/about',   to: 'static_pages#about',  as: 'about'
   match '/contact', to: 'static_pages#contact',as: 'contact'
-
-  match '/tracker', to: 'tracker#show', as: 'tracker'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -7,7 +7,8 @@ redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.passwor
 # We suggest you use a special db in Redis, when you need to clear all data, you can use flushdb command to clear them.
 #redis.select(3)
 # Give a special namespace as prefix for Redis key, when your have more than one project used redis-search, this config will make them work fine.
-redis = Redis::Namespace.new("bestbay:redis_search", :redis => redis)
+prepend = Rails.env == "development" ? "dev" : ""
+redis = Redis::Namespace.new( prepend + "bestbay:redis_search", :redis => redis)
 Redis::Search.configure do |config|
   config.redis = redis
   config.complete_max_length = 100
