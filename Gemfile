@@ -45,6 +45,8 @@ end
 
 gem 'jquery-rails'
 
+gem 'gon'
+
 gem 'devise'
 
 gem 'omniauth-google-oauth2'
@@ -66,6 +68,10 @@ gem 'daemons'
 gem 'active_paypal_adaptive_payment'
 
 gem 'redis-search'
+
+gem 'bootstrap-timepicker-rails'
+
+gem 'bootstrap-datepicker-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

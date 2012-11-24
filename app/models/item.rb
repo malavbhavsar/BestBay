@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
   include Redis::Search
-  attr_accessible :name, :user_id, :picture, :description, :opening_bid, :highest_bid, :closing_date
+  attr_accessible :name, :user_id, :picture, :description, :opening_bid, :highest_bid, :closing_date, :closing_day, :closing_time
   has_many :line_items
   has_many :bids
   belongs_to :user
@@ -17,6 +17,9 @@ class Item < ActiveRecord::Base
                      :score_field => :highest_bid,
                      :ext_fields => [:id,:user_id,:picture,:description,:closing_date])
 
+  def closing_date
+    DateTime.parse(self.closing_day.to_s + "T" + self.closing_time.to_s.split(" ")[1,2].join(" "))
+  end
 
   def highest_bid
     if self.bids.empty?

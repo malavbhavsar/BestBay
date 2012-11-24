@@ -24,21 +24,15 @@
             <br>
             Highest bid: <%= @item.highest_bid %>
             <br>
-            Closing Date: <%= @item.closing_date.to_s %>
-            <br>
-            Current Time: <%= @current_time %>
-            <br>
-            <% if @check_time > 0 %>
-            Auction closes in: <%= @check_time.to_s %>  hrs
-            <% else %>
-            Auction is closed :(
+            <%= content_tag "div", id: "bid-closing-in" do %>
             <% end %>
+            <br>
           </div>
         </div>
-        <% if @check_time > 0 %>
-        <div>
-          <%= render "items/form_bid" %>
-        </div>
+        <% unless @item.closing_date.past? %>
+          <div>
+            <%= render "items/form_bid" %>
+          </div>
         <% end %>
         <table class="table table-bordered">
           <tr>

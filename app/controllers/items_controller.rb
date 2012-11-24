@@ -16,11 +16,8 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    @current_time = Time.now
     @item = Item.find(params[:id])
-    @check_time = (Time.parse(@item.closing_date.to_s)-Time.parse(DateTime.now.to_s))/3600
-
-    @highest_bid = @item.highest_bid
+    gon.item_closing_date = @item.closing_date
 
     respond_to do |format|
       format.html # show.html.erb

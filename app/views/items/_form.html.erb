@@ -35,9 +35,10 @@
         </div>
     </div>
     <div class="control-group">
-      <label class="control-label" for="item_name">Closing date</label>
+      <label class="control-label" for="item_name">Closing time</label>
       <div class="controls">
-        <%= f.datetime_select :closing_date %>
+        <%= f.text_field :closing_day %>
+        <%= f.text_field :closing_time %>
       </div>
     </div>
     <div class="control-group">

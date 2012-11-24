@@ -71,7 +71,10 @@ GEM
     addressable (2.3.2)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
+    bootstrap-datepicker-rails (0.6.30)
     bootstrap-sass (2.1.0.0)
+    bootstrap-timepicker-rails (0.1.2)
+      railties (>= 3.0)
     builder (3.0.3)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -132,6 +135,9 @@ GEM
     ffi (1.1.5)
     gherkin (2.11.2)
       json (>= 1.4.6)
+    gon (4.0.1)
+      actionpack (>= 2.3.0)
+      json
     hashie (1.2.0)
     hike (1.2.1)
     httpauth (0.2.0)
@@ -274,7 +280,9 @@ PLATFORMS
 DEPENDENCIES
   ZenTest
   active_paypal_adaptive_payment
+  bootstrap-datepicker-rails
   bootstrap-sass
+  bootstrap-timepicker-rails
   capybara
   clockwork
   coffee-rails (~> 3.2.1)
@@ -289,6 +297,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   filepicker-rails!
+  gon
   jquery-rails
   launchy
   omniauth-google-oauth2
