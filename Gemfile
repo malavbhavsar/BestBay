@@ -69,7 +69,7 @@ gem 'active_paypal_adaptive_payment'
 
 gem 'redis-search'
 
-gem 'bootstrap-timepicker-rails'
+gem 'bootstrap-timepicker-rails', :git => 'git://github.com/tispratik/bootstrap-timepicker-rails.git'
 
 gem 'bootstrap-datepicker-rails'
 

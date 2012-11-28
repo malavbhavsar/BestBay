@@ -14,6 +14,13 @@ GIT
       railties (>= 3.1.0, < 5.0)
 
 GIT
+  remote: git://github.com/tispratik/bootstrap-timepicker-rails.git
+  revision: 66810b4ab6c16109c9e0e191e99b1d46b14325cc
+  specs:
+    bootstrap-timepicker-rails (0.1.2)
+      railties (>= 3.0)
+
+GIT
   remote: https://github.com/collectiveidea/delayed_job
   revision: 348f93a08d5d8aa314ba8456af6dbb90fd599205
   specs:
@@ -72,9 +79,8 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     bootstrap-datepicker-rails (0.6.30)
-    bootstrap-sass (2.1.0.0)
-    bootstrap-timepicker-rails (0.1.2)
       railties (>= 3.0)
+    bootstrap-sass (2.1.0.0)
     builder (3.0.3)
     cancan (1.6.8)
     capybara (1.1.2)
@@ -316,7 +322,7 @@ DEPENDENCIES
   active_paypal_adaptive_payment
   bootstrap-datepicker-rails
   bootstrap-sass
-  bootstrap-timepicker-rails
+  bootstrap-timepicker-rails!
   cancan
   capybara
   clockwork
