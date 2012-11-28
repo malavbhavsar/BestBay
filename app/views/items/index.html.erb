@@ -1,15 +1,7 @@
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class="span3">
-      <div class="well sidebar-nav">
-        <ul class="nav nav-list">
-          <li class="nav-header">Sidebar</li>
-          <li><%= link_to image_tag('thumb.jpeg') %></li>
-          <li>Name: Harshad Mande</li>
-          <li>Addr: Pitt, PA</li>
-          <li>Tel.: 412-378-5298</li>
-        </ul>
-      </div>
+    <div id="top_navigation" class="span3 well">
+      <%= render_navigation :renderer => :list_renderer %>
     </div>
     <div class="span9">
       <%= render 'shared/search_box' %>

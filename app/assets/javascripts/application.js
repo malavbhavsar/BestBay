@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.superfish
 //= require jquery.autocomplete
 //= require bootstrap-datepicker
 //= require bootstrap-timepicker

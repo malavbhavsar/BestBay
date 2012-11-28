@@ -19,3 +19,6 @@ $("#item_closing_day").datepicker
   autoclose: true
 
 $("#item_closing_time").timepicker defaultTime: '12:00 AM'
+
+$(document).ready ->
+  $("#top_navigation ul").superfish()
