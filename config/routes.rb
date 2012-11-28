@@ -27,6 +27,10 @@ BestBay::Application.routes.draw do
   match '/about',   to: 'static_pages#about',  as: 'about'
   match '/contact', to: 'static_pages#contact',as: 'contact'
 
+  match '/items/category/:name', to: 'items#category', :as => 'items_category'
+
+  match '/items/category/*names', to: 'items#category', :as => 'items_primary_category'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

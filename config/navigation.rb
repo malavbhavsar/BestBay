@@ -49,9 +49,36 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
+    #<% grouped_options = {"Book"=>["Cookbook","Fairy tale","Novel"],"Cloth"=>["Baby", "Man", "Woman"],
+    #                      "Electronic"=>["Laptop", "Mobile phone", "Monitor"],"Home"=>["Kitchen", "Sofa",
+    #                                                                                   "Tool kit"],
+    #                      "Shoe"=>["Child", "Man", "Woman"]} %>
     navigation.items do |primary|
-      primary.item :header_admin, 'Admin', items_path, :opts => {:nav_header => true}
-      primary.item :my_items, 'My Items', items_path, :opts => {:icon => 'icon-th'}
+      primary.item :book, 'Book', items_category_path(["Cookbook", "Fairy tale", "Novel"]) do |book|
+        book.item :cookbook, "Cookbook", items_category_path("Cookbook")
+        book.item :fairy_tale, "Fairy tale", items_category_path("Fairy tale")
+        book.item :novel, "Novel", items_category_path("Novel")
+      end
+      primary.item :cloth, 'Cloth', items_category_path(["Baby","Man","Woman"]) do |cloth|
+        cloth.item :baby, "Baby", items_category_path("Baby")
+        cloth.item :man, "Man", items_category_path("Man")
+        cloth.item :woman, "Woman", items_category_path("Woman")
+      end
+      primary.item :electronic, 'Electronic', items_category_path(["Laptop","Mobile phone","Monitor"]) do |electronic|
+        electronic.item :laptop, "Laptop", items_category_path("Laptop")
+        electronic.item :mobile_phone, "Mobile phone", items_category_path("Mobile phone")
+        electronic.item :monitor, "Monitor", items_category_path("Monitor")
+      end
+      primary.item :home, 'Home', items_category_path(["Tool kit", "Kitchen", "Sofa"]) do |home|
+        home.item :tool_kit, "Tool kit", items_category_path("Tool kit")
+        home.item :kitchen, "Kitchen", items_category_path("Kitchen")
+        home.item :sofa, "Sofa", items_category_path("Sofa")
+      end
+      primary.item :shoe, 'Shoe', items_category_path(["Child","Sport","Formal"]) do |shoe|
+        shoe.item :child, "Child", items_category_path("Child")
+        shoe.item :man, "Man", items_category_path("Sport")
+        shoe.item :woman, "Woman", items_category_path("Formal")
+      end
     end
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.

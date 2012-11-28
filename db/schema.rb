@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128043636) do
+ActiveRecord::Schema.define(:version => 20121128063935) do
 
   create_table "bids", :force => true do |t|
     t.integer  "item_id"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20121128043636) do
     t.integer  "user_id"
     t.date     "closing_day"
     t.time     "closing_time"
+    t.string   "category"
   end
 
   create_table "line_items", :force => true do |t|

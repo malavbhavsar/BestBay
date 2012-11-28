@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_filter :authenticate_user!, :only => [:new, :create, :show, :index, :update]
+  before_filter :authenticate_user!, :only => [:new, :create, :show, :index, :update, :search, :category]
 
   # GET /items
   # GET /items.json
@@ -100,6 +100,18 @@ class ItemsController < ApplicationController
       "#{escape_javascript(item['title'])}#!##{item_path(item['id'])}#!##{item['highest_bid']}#!##{item['closing_date']}#!##{escape_javascript(item['description'])}#!##{item['picture']}"
     end
     render :text => lines.join("\n")
+  end
+
+  def category
+    if params[:names]
+      @items = Item.find_all_by_category(params[:names].split('/'))
+    else
+      @items = Item.find_all_by_category(params[:name])
+    end
+    respond_to do |format|
+      format.html { render :action => :index }
+      format.json { render json: @items }
+    end
   end
 
 end
