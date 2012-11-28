@@ -75,6 +75,10 @@ gem 'bootstrap-datepicker-rails'
 
 gem 'simple-navigation-bootstrap'
 
+gem 'rails_admin'
+
+gem 'cancan'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

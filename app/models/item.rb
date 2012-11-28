@@ -1,11 +1,17 @@
 class Item < ActiveRecord::Base
+
   include Redis::Search
+
   attr_accessible :name, :user_id, :picture, :description, :opening_bid, :highest_bid, :closing_date, :closing_day, :closing_time
+
   has_many :line_items
-  has_many :bids
-  belongs_to :user
-  has_many :users, :through => :bids
   before_destroy :ensure_not_referenced_by_any_line_item
+
+  belongs_to :user
+
+  has_many :bids
+  has_many :users, :through => :bids
+
   validates :name, presence: true
   validates :opening_bid, presence: true
 

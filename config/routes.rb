@@ -1,4 +1,8 @@
 BestBay::Application.routes.draw do
+  
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "my_omniauth_callbacks", :registrations => "registrations" }
   resources :items do
     collection do
