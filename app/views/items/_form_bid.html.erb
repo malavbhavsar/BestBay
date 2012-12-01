@@ -2,7 +2,7 @@
     <div class="control-group">
         <label class="control-label" for="item_name">Bid: </label>
         <div class="controls">
-            <%= number_field_tag :bid_amount%>
+            <%= number_field_tag :bid_amount, @item.highest_bid + 1 ,:min => 0.01, :step =>0.01%>
         </div>
     </div>
     <div class="control-group">

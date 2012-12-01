@@ -11,10 +11,20 @@
     <% end %>
     <legend> Auction an item </legend>
     <div class="control-group">
-        <label class="control-label" for="item_name">Name: </label>
+        <label class="control-label" for="item_name">Name</label>
         <div class="controls">
             <%= f.text_field :name%>
         </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="item_name">Category</label>
+      <div class="controls">
+        <% grouped_options = {"Book"=>["Cookbook","Fairy tale","Novel"],"Cloth"=>["Baby", "Man", "Woman"],
+                              "Electronic"=>["Laptop", "Mobile phone", "Monitor"],"Home"=>["Kitchen", "Sofa",
+                                                                                           "Tool kit"],
+                              "Shoe"=>["Child", "Sport", "Formal"]} %>
+        <%= f.select :category, grouped_options %>
+      </div>
     </div>
     <div class="control-group">
         <label class="control-label" for="item_name">Description</label>
@@ -39,16 +49,7 @@
       <div class="controls">
         <%= f.text_field :closing_day %>
         <%= f.text_field :closing_time %>
-      </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label" for="item_name">Category</label>
-      <div class="controls">
-         <% grouped_options = {"Book"=>["Cookbook","Fairy tale","Novel"],"Cloth"=>["Baby", "Man", "Woman"],
-                                "Electronic"=>["Laptop", "Mobile phone", "Monitor"],"Home"=>["Kitchen", "Sofa",
-                                                                                             "Tool kit"],
-                                "Shoe"=>["Child", "Sport", "Formal"]} %>
-         <%= f.select :category, grouped_options %>
+        <span class="help-block">All times are shown in UTC.</span>
       </div>
     </div>
     <div class="control-group">

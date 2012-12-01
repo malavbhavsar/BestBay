@@ -1,4 +1,8 @@
 class Wishlist < ActiveRecord::Base
+
+  validates :name, :uniqueness => { :scope => :user_id, :message => "already exists." }
+  validates :name, :presence => true
+
   has_many :line_items, dependent: :destroy
   belongs_to :user
   attr_accessible :name

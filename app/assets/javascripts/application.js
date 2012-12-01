@@ -24,7 +24,7 @@ window.App = {
         html = "";
         watchs = "";
         watchs = "<abbr>(" + moment(data[3]).fromNow()+")</abbr>";
-        html += "<div class='info' style='overflow: hidden;'>"+"<div style='float: left; padding: 1em;'> <img src=\"" + data[5] + "\" style='max-width: 40px;'>" + "</div>" +"<div style='overflow: hidden; padding: 1em;'> <a href=\"" + data[1] + "\">" + data[0] + "</a>" + watchs + "<br />" + data[4] + "</div> </div>";
+        html += "<div class='info' style='overflow: hidden;'>"+"<div style='float: left; padding: 1em;'> <img src=\"" + data[5] + "\" style='max-width: 40px;'>" + "</div>" +"<div style='overflow: hidden; padding: 1em;'> <a href=\"" + data[1] + "\">" + data[0] + "</a>" + watchs + "<br />" + data[4].replace(/\\n/g, "<br>") + "</div> </div>";
         return html;
     },
     completeProjects: function(el) {

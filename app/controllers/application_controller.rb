@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
       "\r\n"  => '\n',
       "\n"    => '\n',
       "\r"    => '\n',
-      '"'     => '\\"',
-      "'"     => "\\'" }
+      '"'     => "\"",
+      "'"     => "\'" }
 
   def escape_javascript(str)
     return str if str.blank?
