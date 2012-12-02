@@ -12,9 +12,10 @@ class Item < ActiveRecord::Base
   has_many :bids
   has_many :users, :through => :bids
 
-  validates :name, presence: true
-  validates :opening_bid, presence: true
-
+  validates :name, :presence => true
+  validates :opening_bid, :presence => true
+  validates :opening_bid, :format => { :with => /^\d+??(?:\.\d{0,2})?$/ ,:message => " is invalid."}
+  validates :opening_bid, :numericality => {:greater_than => 0.01, :message => " should be greater than 0.01"}
 
 
   redis_search_index(:title_field => :name,
