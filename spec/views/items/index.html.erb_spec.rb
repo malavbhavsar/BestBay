@@ -12,7 +12,6 @@ describe "items/index.html.erb" do
 
     items.each do |item|
       page.should have_content(item.name)
-      page.should have_content(item.description)
       page.should have_content(item.opening_bid.to_s)
       page.should have_content(item.highest_bid.to_s)
       page.should have_css("img")
