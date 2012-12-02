@@ -18,6 +18,8 @@
           <div class="span6">
             Name: <%= @item.name %>
             <br>
+            Owner: <%= @item.user.email %>
+            <br>
             Description: <%= @item.description %>
             <br>
             Opening bid: <%= @item.opening_bid %>
@@ -34,7 +36,7 @@
             <%= render "items/form_bid" %>
           </div>
         <% end %>
-        <table class="table table-bordered">
+        <table id="bid-history" class="table table-bordered">
           <tr>
             <th>
               User

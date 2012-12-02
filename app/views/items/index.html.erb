@@ -13,7 +13,6 @@
         <tr>
           <th>Name</th>
           <th>Picture</th>
-          <th>Description</th>
           <th>Opening Bid</th>
           <th>Highest Bid</th>
           <th>View Details</th>
@@ -24,7 +23,6 @@
             <tr>
               <td><%= item.name %></td>
               <td><%= filepicker_image_tag( item.picture, {w: 160, h: 160, fit: 'clip'}, false) %></td>
-              <td><%= item.description %></td>
               <td><%= item.opening_bid %></td>
               <td><%= item.highest_bid %></td>
               <td><%= link_to 'Show', item %></td>

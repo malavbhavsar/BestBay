@@ -1,3 +1,4 @@
+<h1>Trackers</h1>
 <div class="tabbable tabs-left">
   <ul class="nav nav-tabs">
     <li class="active"><a href="#bidswon" data-toggle="tab">Bids Won</a></li>
@@ -35,6 +36,7 @@
             <tr>
               <td><%= link_to(bid.item.name, item_path(bid.item.id)) %></td>
               <td class="item_price"><%= number_to_currency(bid.amount) %></td>
+              <td><%= bid.user.email %></td>
               <td><%= bid.item.created_at %></td>
             </tr>
         <% end %>

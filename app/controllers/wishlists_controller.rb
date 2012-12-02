@@ -39,7 +39,7 @@ class WishlistsController < ApplicationController
         format.html { redirect_to wishlists_url, notice: 'Wishlist was successfully created.' }
         format.json { redirect_to wishlists_url }
       else
-        format.html { render action: "new" }
+        format.html { render action: "new", error: @wishlist.errors }
         format.json { render json: @wishlist.errors, status: :unprocessable_entity }
       end
     end
@@ -55,7 +55,7 @@ class WishlistsController < ApplicationController
         format.html { redirect_to wishlists_url, notice: 'Wishlist was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: "edit", error: @wishlist.errors }
         format.json { render json: @wishlist.errors, status: :unprocessable_entity }
       end
     end
