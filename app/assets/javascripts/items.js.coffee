@@ -19,12 +19,12 @@ $(document).ready ->
     time = $(this).find("td").eq(2)
     time.html(moment(time.html(), "YYYY-MM-DD hh:mm:ss Z").fromNow())
 
-$("#item_closing_day").datepicker
+$("#closing_day").datepicker
   format: "yyyy-mm-dd"
   weekStart: 1
   autoclose: true
 
-$("#item_closing_time").timepicker defaultTime: '12:00 AM'
+$("#closing_time").timepicker defaultTime: '12:00 AM'
 
 $(document).ready ->
   $("#top_navigation ul").superfish()

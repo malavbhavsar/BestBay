@@ -2,7 +2,7 @@ class Item < ActiveRecord::Base
 
   include Redis::Search
 
-  attr_accessible :name, :user_id, :picture, :description, :opening_bid, :highest_bid, :closing_date, :closing_day, :closing_time, :category
+  attr_accessible :name, :user_id, :picture, :description, :opening_bid, :highest_bid, :closing_date, :category
 
   has_many :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
@@ -15,18 +15,14 @@ class Item < ActiveRecord::Base
   validates :name, :presence => true
   validates :opening_bid, :presence => true
   validates :opening_bid, :format => { :with => /^\d+??(?:\.\d{0,2})?$/ ,:message => " is invalid."}
-  validates :opening_bid, :numericality => {:greater_than => 0.01, :message => " should be greater than 0.01"}
-
+  validates :opening_bid, :numericality => {:greater_than => 0.01, :message => " should be a number greater than 0.01"}
+  validates_datetime :closing_date, :after => lambda{DateTime.now}
 
   redis_search_index(:title_field => :name,
                      :alias_field => :name,
                      :prefix_index_enable => true,
                      :score_field => :highest_bid,
                      :ext_fields => [:id,:user_id,:picture,:description,:closing_date])
-
-  def closing_date
-    DateTime.parse(self.closing_day.to_s + "T" + self.closing_time.to_s.split(" ")[1,2].join(" "))
-  end
 
   def highest_bid
     if self.bids.empty?

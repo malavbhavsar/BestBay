@@ -46,8 +46,7 @@ ActiveRecord::Schema.define(:version => 20121128063935) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "user_id"
-    t.date     "closing_day"
-    t.time     "closing_time"
+    t.datetime "closing_date"
     t.string   "category"
   end
 

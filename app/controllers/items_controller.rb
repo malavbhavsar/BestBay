@@ -40,6 +40,9 @@ class ItemsController < ApplicationController
   # PUT /items/1.json
   def update
     @item = Item.find(params[:id])
+    closing_day = params[:item].delete(:closing_day)
+    closing_time = params[:item].delete(:closing_time)
+    params[:item][:closing_date] = DateTime.parse(closing_day.to_s + "T" + closing_time.to_s.split(" ")[1,2].join(" "))
 
     respond_to do |format|
       if @item.update_attributes(params[:item])
@@ -55,14 +58,24 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
+    closing_day = params.delete(:closing_day)
+    closing_time = params.delete(:closing_time)
+    passed = true
+    begin
+      params[:item][:closing_date] = DateTime.parse(closing_day.to_s + "T" + closing_time.to_s.split(" ")[1,2].join(" "))
+    rescue Exception => e
+      passed = false
+    end
     @item = Item.new(params[:item])
     @item.user_id = current_user.id
     respond_to do |format|
-      if @item.save
+      if @item.save and passed
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render json: @item, status: :created, location: @item }
       else
-        format.html { render action: "new" }
+        format.html {
+          flash[:error] = "error in date time format" unless passed
+          render action: "new" }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
