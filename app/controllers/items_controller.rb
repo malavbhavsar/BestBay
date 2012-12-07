@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     closing_day = params[:item].delete(:closing_day)
     closing_time = params[:item].delete(:closing_time)
-    params[:item][:closing_date] = DateTime.parse(closing_day.to_s + "T" + closing_time.to_s.split(" ")[1,2].join(" "))
+    params[:item][:closing_date] = DateTime.parse(closing_day.to_s + "T" + closing_time.to_s)
 
     respond_to do |format|
       if @item.update_attributes(params[:item])
@@ -62,7 +62,7 @@ class ItemsController < ApplicationController
     closing_time = params.delete(:closing_time)
     passed = true
     begin
-      params[:item][:closing_date] = DateTime.parse(closing_day.to_s + "T" + closing_time.to_s.split(" ")[1,2].join(" "))
+      params[:item][:closing_date] = DateTime.parse(closing_day.to_s + "T" + closing_time.to_s)
     rescue Exception => e
       passed = false
     end
