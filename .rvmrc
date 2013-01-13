@@ -1,2 +1,2 @@
-rvm --create use ruby-1.9.3-p194@cmucourse
+rvm --create use ruby-1.9.3-p362@cmucourse
 
