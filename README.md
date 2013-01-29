@@ -21,10 +21,3 @@ Other VPs
 =========
 - Mel Rosso-Llopart rossollo@sv.cmu.edu
 - Todd Sedano todd.sedano@sv.cmu.edu
-
-Dependency Status 
-========
-Build Status [![Build Status](http://build.sv.cmu.edu:3000/projects/Where_is_michael.png)](http://build.sv.cmu.edu:3000/projects/Where_is_michael)
-========
-CodeClimate 
-========
