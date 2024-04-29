@@ -1,3 +1,5 @@
+It has been 12 years since I finshed the course. This repo represents collection of good patterns then. They are not necessarily best at the moment. I am archiving this project but feel free to scour throught the codebase and use patterns that still make sense :)
+
 BestBay
 =======
 
